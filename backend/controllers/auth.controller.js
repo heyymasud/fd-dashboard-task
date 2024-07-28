@@ -10,7 +10,7 @@ const register = async (req, res, next) => {
   // cek inputan tidak boleh kosong ok
   if (!fullname || !email || !password) {
     return res.status(400).json({
-        message: "Data tidak boleh kosong" 
+        message: "Data cannot be empty" 
     });
   }
 
@@ -22,7 +22,7 @@ const register = async (req, res, next) => {
 });
   // ok
   if (exist) {
-    return res.status(400).json({ message: "email sudah terdaftar, silahkan ganti email" });
+    return res.status(400).json({ message: "Email already registered, please change email" });
   }
 
   // enkripsi password ok
@@ -33,7 +33,7 @@ const register = async (req, res, next) => {
     password: hashedPassword,
   })
 
-  return res.status(201).json(newUser);
+  return res.status(201).json({ message: "Registration success, please login" });
 };
 const login = async (req, res, next) => {
   // ambil data dari req.body ok
@@ -42,7 +42,7 @@ const login = async (req, res, next) => {
   // cek inputan tidak boleh kosong ok
   if (!email || !password) {
     return res.status(400).json({
-        message: "Data tidak boleh kosong" 
+        message: "Data cannot be empty" 
     });
   }
 
@@ -54,19 +54,19 @@ const login = async (req, res, next) => {
 });
   // ok
   if (!user) {
-    return res.status(400).json({ message: "Email atau password salah" });
+    return res.status(400).json({ message: "Email or password is wrong" });
   }
 
   // cek dan compare password ok
   const isMatch = bcrypt.compareSync(password, user.password);
   if (!isMatch) {
-    return res.status(400).json({ message: "Email atau password salah" });
+    return res.status(400).json({ message: "Email or password is wrong" });
   }
 
   // generate token ok
   const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: 60*5 });
 
-  return res.status(200).json({ message: "Login Berhasil", token });
+  return res.status(200).json({ message: "Login success", token });
 };
 
 module.exports = {

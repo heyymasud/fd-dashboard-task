@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { GoBell } from "react-icons/go";
 import { LuLogOut } from "react-icons/lu";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [dropDown, setDropDown] = useState(false);
   const handleDropDown = () => {
     setDropDown(!dropDown);
     console.log(dropDown);
   };
+
+  const handleLogout = () => {
+    navigate("/login");
+  }
 
   return (
     <div className="flex justify-between items-center py-4 px-5">
@@ -46,6 +52,7 @@ const Header = () => {
             </li>
             <li
               className={` font-medium px-3 py-4 hover:text-indigo-500 hover:bg-indigo-100 border-b flex gap-2 items-center`}
+              onClick={handleLogout}
             >
               Log Out <LuLogOut size={20} />
             </li>
