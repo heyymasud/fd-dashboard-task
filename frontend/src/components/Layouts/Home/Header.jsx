@@ -1,8 +1,16 @@
+import { useState } from "react";
 import { GoBell } from "react-icons/go";
+import { LuLogOut } from "react-icons/lu";
 
 const Header = () => {
+  const [dropDown, setDropDown] = useState(false);
+  const handleDropDown = () => {
+    setDropDown(!dropDown);
+    console.log(dropDown);
+  };
+
   return (
-    <div className="flex justify-between items-center p-4">
+    <div className="flex justify-between items-center py-4 px-5">
       <div>
         <h1 className="text-xs">Welcome Back!</h1>
         <p className="text-xl font-semibold">Masud</p>
@@ -23,10 +31,25 @@ const Header = () => {
             </span>
           </button>
           <img
-            className="w-8 rounded-full border-4 border-indigo-400 "
+            className="w-9 rounded-full cursor-pointer border-4 border-indigo-400 relative "
             src="https://randomuser.me/api/portraits/men/1.jpg"
             alt="profile"
+            onClick={handleDropDown}
           />
+          <ul
+            className={`${dropDown ? "absolute" : "hidden"} top-16 text-slate-600 text-sm xl:text-base right-3 bg-slate-100 rounded-b-lg xl:shadow-2xl xl:py-1 xl:w-52 cursor-pointer z-10`}
+          >
+            <li
+              className={` font-medium px-3 py-4 hover:text-indigo-500 hover:bg-indigo-100 border-b`}
+            >
+              My Profile
+            </li>
+            <li
+              className={` font-medium px-3 py-4 hover:text-indigo-500 hover:bg-indigo-100 border-b flex gap-2 items-center`}
+            >
+              Log Out <LuLogOut size={20} />
+            </li>
+          </ul>
         </div>
       </div>
     </div>

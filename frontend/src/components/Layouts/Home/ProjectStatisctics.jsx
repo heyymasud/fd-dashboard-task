@@ -47,7 +47,7 @@ const ProjectStatisctics = () => {
 
   return (
     <div className="line">
-      <h1 className="text-xl font-bold">Revenue</h1>
+      <h1 className="text-xl font-bold">Revenue Statistics</h1>
       <Chart
         options={options}
         series={series}
