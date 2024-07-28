@@ -1,29 +1,31 @@
 import Chart from "react-apexcharts";
-
+import { fetchRevenues } from "../../../services/revenue.service";
+import { useEffect, useState } from "react";
 const ProjectStatisctics = () => {
+  const [revenues, setRevenues] = useState([]);
+  const fetchData = async () => {
+    const data = await fetchRevenues();
+    setRevenues(data.data);
+  };
+
+  const total = revenues.map((revenue) => revenue.total);
+  const month = revenues.map((revenue) => revenue.month);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+
   const options = {
     stroke: {
       curve: "smooth",
-      colors: ["#6366F1"], 
+      colors: ["#6366F1"],
     },
     markers: {
       size: 0,
     },
     xaxis: {
-      categories: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ],
+      categories: month,
     },
     yaxis: {
       show: true,
@@ -38,10 +40,7 @@ const ProjectStatisctics = () => {
   const series = [
     {
       name: "Revenue",
-      data: [
-        30000, 40000, 25000, 50000, 49000, 21000, 70000, 51000, 20000, 30000,
-        40000, 25000,
-      ],
+      data: total,
     },
   ];
 

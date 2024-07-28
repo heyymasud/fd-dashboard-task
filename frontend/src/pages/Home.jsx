@@ -1,4 +1,4 @@
-import ProjectStatisctics from "../components/Layouts/Home/ProjectStatisctics";
+import ProjectStatisctics from "../components/Layouts/Home/RevenueStatisctics";
 import RevenueCard from "../components/Layouts/Home/RevenueCard";
 
 
