@@ -21,11 +21,10 @@ const FormRegister = () => {
       },
     }).then((res) => {
       alert(res.data.message);
+      navigate("/login");
     }).catch((err) => {
       alert(err.response.data.message);
     });
-
-    navigate("/login");
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}> 
