@@ -1,8 +1,88 @@
 {
-  "hash": "9b8e4fcc",
+  "hash": "72006886",
   "configHash": "dda39b6e",
-  "lockfileHash": "e3b0c442",
-  "browserHash": "920c366d",
-  "optimized": {},
-  "chunks": {}
+  "lockfileHash": "82858333",
+  "browserHash": "234cc47d",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/.pnpm/react@18.3.1/node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "e039435e",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "7a576626",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/.pnpm/react-router-dom@6.25.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "6ebf413e",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../node_modules/.pnpm/axios@1.7.2/node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "bdaeb92a",
+      "needsInterop": false
+    },
+    "react-icons/lu": {
+      "src": "../../node_modules/.pnpm/react-icons@5.2.1_react@18.3.1/node_modules/react-icons/lu/index.mjs",
+      "file": "react-icons_lu.js",
+      "fileHash": "cf32eaf7",
+      "needsInterop": false
+    },
+    "react-icons/tb": {
+      "src": "../../node_modules/.pnpm/react-icons@5.2.1_react@18.3.1/node_modules/react-icons/tb/index.mjs",
+      "file": "react-icons_tb.js",
+      "fileHash": "55d30929",
+      "needsInterop": false
+    },
+    "react-icons/fa": {
+      "src": "../../node_modules/.pnpm/react-icons@5.2.1_react@18.3.1/node_modules/react-icons/fa/index.mjs",
+      "file": "react-icons_fa.js",
+      "fileHash": "02f3eae4",
+      "needsInterop": false
+    },
+    "react-apexcharts": {
+      "src": "../../node_modules/.pnpm/react-apexcharts@1.4.1_apexcharts@3.51.0_react@18.3.1/node_modules/react-apexcharts/dist/react-apexcharts.min.js",
+      "file": "react-apexcharts.js",
+      "fileHash": "244482cb",
+      "needsInterop": true
+    },
+    "react-hook-form": {
+      "src": "../../node_modules/.pnpm/react-hook-form@7.52.1_react@18.3.1/node_modules/react-hook-form/dist/index.esm.mjs",
+      "file": "react-hook-form.js",
+      "fileHash": "0fb34cb8",
+      "needsInterop": false
+    },
+    "react-icons/go": {
+      "src": "../../node_modules/.pnpm/react-icons@5.2.1_react@18.3.1/node_modules/react-icons/go/index.mjs",
+      "file": "react-icons_go.js",
+      "fileHash": "45285663",
+      "needsInterop": false
+    },
+    "react-icons/gi": {
+      "src": "../../node_modules/.pnpm/react-icons@5.2.1_react@18.3.1/node_modules/react-icons/gi/index.mjs",
+      "file": "react-icons_gi.js",
+      "fileHash": "6a269cf5",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-C4NW2Y5O": {
+      "file": "chunk-C4NW2Y5O.js"
+    },
+    "chunk-HQ4KXYUI": {
+      "file": "chunk-HQ4KXYUI.js"
+    },
+    "chunk-OELA7GPI": {
+      "file": "chunk-OELA7GPI.js"
+    },
+    "chunk-G3PMV62Z": {
+      "file": "chunk-G3PMV62Z.js"
+    }
+  }
 }
