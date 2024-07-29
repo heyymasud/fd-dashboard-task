@@ -1,20 +1,7 @@
 import Chart from "react-apexcharts";
-import { fetchRevenues } from "../../../services/revenue.service";
-import { useEffect, useState } from "react";
-const ProjectStatisctics = () => {
-  const [revenues, setRevenues] = useState([]);
-  const fetchData = async () => {
-    const data = await fetchRevenues();
-    setRevenues(data.data);
-  };
-
+const ProjectStatisctics = ({ revenues }) => {
   const total = revenues.map((revenue) => revenue.total);
   const month = revenues.map((revenue) => revenue.month);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
 
   const options = {
     stroke: {
