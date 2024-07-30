@@ -1,7 +1,7 @@
-import axios from "axios";
+import api from "../services/api";
 
 const fetchRevenues = async () => {
-    const res = await axios.get("http://localhost:3000/api/v1/revenues")
+    const res = await api.get("/revenues")
     return res.data;
 }
 

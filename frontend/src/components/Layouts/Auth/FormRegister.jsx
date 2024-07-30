@@ -2,7 +2,7 @@ import InputForm from "../../Fragments/InputForm";
 import Button from "../../Elements/Button";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import { registerAuth } from "../../../services/auth.service";
 
 const FormRegister = () => {
   const navigate = useNavigate();
@@ -14,17 +14,14 @@ const FormRegister = () => {
     formState: { errors },
   } = useForm({ mode: "onChange" });
   //handle submit
-  const onSubmit = (data) => {
-    axios.post("http://localhost:3000/api/v1/register", data, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((res) => {
-      alert(res.data.message);
+  const onSubmit = async (data) => {
+    try {
+      const res = await registerAuth(data);
+      alert(res.message);
       navigate("/login");
-    }).catch((err) => {
-      alert(err.response.data.message);
-    });
+    } catch (error) {
+      alert(error.message);
+    }
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}> 
