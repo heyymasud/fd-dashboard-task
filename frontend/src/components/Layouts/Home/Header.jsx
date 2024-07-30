@@ -8,7 +8,6 @@ const Header = () => {
   const [dropDown, setDropDown] = useState(false);
   const handleDropDown = () => {
     setDropDown(!dropDown);
-    console.log(dropDown);
   };
 
   const handleLogout = () => {
